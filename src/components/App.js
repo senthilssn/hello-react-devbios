@@ -13,24 +13,12 @@ import Home from './Home';
 import devActions from '../reducers/devBios';
 
 class App extends Component{
-  constructor(props){
-    super(props);
-    
-  }
 
   componentDidMount = () => {
     fetch('https://tech-services-1000201953.uc.r.appspot.com/developers')
     .then(res=>res.json())
     .then(devs=>this.props.fetchDevelopers(devs))
     .catch(error=>console.log('The following error occurred: '+error))
-  }
-
-
-  addDeveloper = (dev) => {
-    dev.id = this.state.developers.length + 1;
-    let devs = [...this.state.developers,dev];
-
-    this.setState({developers:devs});
   }
 
   render(){

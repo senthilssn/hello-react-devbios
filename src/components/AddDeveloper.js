@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import Developer from '../models/developer';
+import devActions from '../reducers/devBios';
 
 class AddDeveloper extends Component {
     constructor(props){
@@ -113,4 +115,6 @@ class AddDeveloper extends Component {
     }
 }
 
-export default withRouter(AddDeveloper);
+export default connect(null,{
+    addDeveloper: devActions.addBioActionCreator 
+})(withRouter(AddDeveloper));
