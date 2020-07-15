@@ -4,7 +4,7 @@ import{
 } from 'react-router-dom'
 
 import DisplayBios from './DisplayBios';
-import Developer from './Developer';
+import Developer from '../models/Developer';
 import AddDeveloper from './AddDeveloper';
 import Navbar from './Navbar';
 import Home from './Home';
