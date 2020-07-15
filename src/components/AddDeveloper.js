@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
-import Developer from '../models/Developer';
-import { withRouter } from 'react-router-dom'
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+
+import Developer from '../models/developer';
 
 class AddDeveloper extends Component {
     constructor(props){
@@ -20,8 +21,7 @@ class AddDeveloper extends Component {
         const name = target.name;
 
         this.setState({
-            [name]:value,
-            dirty:true
+            [name]:value
         })
     }
 
@@ -54,13 +54,13 @@ class AddDeveloper extends Component {
             this.state.yearStarted
         );
 
+        //live API post
         fetch("https://tech-services-1000201953.uc.r.appspot.com/developer",
-        {
-            method: 'POST',
-            body: JSON.stringify(dev),
-            headers: {'Content-Type':'application/json'}
-
-        }
+            {
+                method: 'POST',
+                body: JSON.stringify(dev),
+                headers: {'Content-Type':'application/json'}
+            }
         ).catch(error=>console.log(error));
         
         this.props.addDeveloper(dev);
@@ -74,8 +74,8 @@ class AddDeveloper extends Component {
             favoriteLanguage:'',
             yearStarted: null
         });
-        document.getElementById('devForm').reset();   
-        this.props.history.push("/bios")     
+        document.getElementById('devForm').reset();
+        this.props.history.push('/bios');
     }
 
     render() {

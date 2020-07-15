@@ -1,14 +1,13 @@
-import React from 'react'
+import React from 'react';
 import '../styles/Home.css';
-import logo from './../logo.svg';
-
+import logo from '../logo.svg';
 
 function Home() {
     return (
-        <div>            
+        <div className="App">
             <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <p>
+            <p >
                 Edit <code>src/App.js</code> and save to reload.
             </p>
             <p>Hello!</p>
@@ -20,9 +19,9 @@ function Home() {
             >
                 Learn React
             </a>
-            </header>                
+            </header>
         </div>
     )
 }
 
-export default Home
+export default Home;

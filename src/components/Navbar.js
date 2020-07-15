@@ -1,7 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import logo from './../logo.svg';
-import '../styles/Navbar.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+import logo from '../logo.svg';
+import '../styles/Navbar.css';
 
 function Navbar() {
     return (
@@ -9,7 +10,6 @@ function Navbar() {
             <Link className="navbar-brand" to="/">
                 <img className="brand" src={logo} alt='logo' /> 
             </Link>
-
             <ul className="navbar-nav">
                 <li className="nav-item">
                     <Link to="/" className="nav-link">Home</Link>
@@ -22,8 +22,7 @@ function Navbar() {
                 </li>
             </ul>
         </nav>
-
     )
 }
 
-export default Navbar
+export default Navbar;
