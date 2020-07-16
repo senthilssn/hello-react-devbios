@@ -13,12 +13,9 @@ import Home from './Home';
 import devActions from '../reducers/devBios';
 
 class App extends Component{
-
-  componentDidMount = () => {
-    fetch('https://tech-services-1000201953.uc.r.appspot.com/developers')
-    .then(res=>res.json())
-    .then(devs=>this.props.fetchDevelopers(devs))
-    .catch(error=>console.log('The following error occurred: '+error))
+  constructor(props){
+    super(props);
+    this.props.fetchDevelopers();
   }
 
   render(){
@@ -33,7 +30,7 @@ class App extends Component{
             <DisplayBios developers={this.props.developers} />
           </Route>
           <Route path="/create-bio" >
-            <AddDeveloper addDeveloper={this.addDeveloper} />
+            <AddDeveloper  />
           </Route>
         </Switch>
       </Router>
@@ -44,5 +41,5 @@ class App extends Component{
 export default connect(({developers}) => ({
   developers: developers
 }),{
-  fetchDevelopers: devActions.getAllBiosActionCreator
+  fetchDevelopers: devActions.getAllBiosRequestActionCreator
 })(App);
